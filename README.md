@@ -4,41 +4,42 @@ This is a ZMK firmware configuration for the Dumbpad macropad with a single rota
 
 ## Features
 
-- 4x4 key matrix + 3 additional keys (19 keys total)
+- 4x4 key matrix + 1 additional key (17 keys total)
 - Single rotary encoder (top-left position)
-- 3 layers with different functions
+- 2 layers with different functions
 - Bluetooth and USB support
 - Encoder functions change per layer:
   - Layer 0 (Default): Volume up/down
-  - Layer 1: Arrow up/down
-  - Layer 2: Brightness up/down
+  - Layer 1 (Function): Page up/down
 
 ## Layout
 
 Default layout matches QMK dumbpad default keymap (numpad):
 
 ```
-| ENC | 7  | 8  | 9  |
-| TAB | 4  | 5  | 6  |
-| FN  | 1  | 2  | 3  |
-| FN  | 0  | .  | ENT|
-| BSP | -  | +  |    |
+| ENC | /  | *  | -  |
+|  7  | 8  | 9  | +  |
+|  4  | 5  | 6  | +  |
+| FN  | 1  | 2  | 3  | ENT|
 ```
 
 Where:
-- ENC = Rotary encoder (push for ESC)
-- FN = Hold for function layer
+- ENC = Rotary encoder (volume up/down)
+- FN = Hold for function layer (navigation controls)
 - All number keys are numpad keys (KP_N0-KP_N9)
 
 ## Pin Assignments (nice!nano v2)
 
+Based on QMK dumbpad v1x configuration:
+
 ### Matrix
-- **Row pins**: D4, C6, D7, E6, B4 (GPIO 4, 5, 6, 7, 8)
-- **Column pins**: F4, F5, F6, F7 (GPIO 21, 20, 19, 18)
+- **Row pins**: F4, F5, F6, F7 (GPIO 21, 20, 19, 18)
+- **Column pins**: C6, D7, E6, B4, B5 (GPIO 5, 6, 7, 8, 9)
+- **Diode direction**: COL2ROW
 
 ### Encoder
-- **A pin**: D2 (GPIO 2)
-- **B pin**: D3 (GPIO 3)
+- **A pin**: B2 (GPIO 16)
+- **B pin**: D4 (GPIO 4)
 
 ## Building Locally
 
