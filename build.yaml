@@ -2,5 +2,5 @@
 # For more information: https://zmk.dev/docs/customization#building-additional-keyboards
 ---
 include:
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: dumbpad

@@ -44,16 +44,16 @@ jobs:
         run: west zephyr-export
 
       - name: West Build (Dumbpad)
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=dumbpad -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b nice_nano -- -DSHIELD=dumbpad -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
       - name: Dumbpad Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
 
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 dumbpad_nice_nano_v2.uf2
+        run: cp build/zephyr/zmk.uf2 dumbpad_nice_nano.uf2
 
       - name: Archive (Dumbpad)
         uses: actions/upload-artifact@v4
         with:
           name: firmware
-          path: dumbpad_nice_nano_v2.uf2
+          path: dumbpad_nice_nano.uf2

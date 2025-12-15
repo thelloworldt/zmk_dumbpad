@@ -49,7 +49,7 @@ Where:
 
 2. Build the firmware:
    ```bash
-   west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=dumbpad -DZMK_CONFIG="${PWD}/config"
+   west build -s zmk/app -b nice_nano -- -DSHIELD=dumbpad -DZMK_CONFIG="${PWD}/config"
    ```
 
 3. The firmware will be at `build/zephyr/zmk.uf2`
@@ -65,7 +65,7 @@ Where:
 
 1. Put the nice!nano v2 into bootloader mode by double-pressing the reset button
 2. A drive called `NICENANO` should appear
-3. Copy the `dumbpad_nice_nano_v2.uf2` file to the drive
+3. Copy the `dumbpad_nice_nano.uf2` file to the drive
 4. The device will automatically restart with the new firmware
 
 ## Customization
