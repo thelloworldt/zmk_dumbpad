@@ -15,18 +15,20 @@ This is a ZMK firmware configuration for the Dumbpad macropad with a single rota
 
 ## Layout
 
+Default layout matches QMK dumbpad default keymap (numpad):
+
 ```
 | ENC | 7  | 8  | 9  |
 | TAB | 4  | 5  | 6  |
-| L1  | 1  | 2  | 3  |
-| L2  | 0  | .  | ENT|
+| FN  | 1  | 2  | 3  |
+| FN  | 0  | .  | ENT|
 | BSP | -  | +  |    |
 ```
 
 Where:
 - ENC = Rotary encoder (push for ESC)
-- L1 = Hold for Layer 1
-- L2 = Hold for Layer 2
+- FN = Hold for function layer
+- All number keys are numpad keys (KP_N0-KP_N9)
 
 ## Pin Assignments (nice!nano v2)
 
@@ -90,19 +92,15 @@ Add additional layers in the keymap file following the existing pattern.
 ## Layer Functions
 
 ### Layer 0 (Default)
-- Number pad layout
-- Encoder: Volume control
+- Standard numpad layout with keypad number keys
+- TAB key for navigation
+- Encoder: Volume control (rotate), ESC (press)
 
-### Layer 1 (Function keys)
-- F1-F12 keys
-- Navigation keys (Home, End, Page Up/Down)
-- Encoder: Arrow up/down
-
-### Layer 2 (Media & System)
-- Bluetooth controls (clear, select profiles)
-- Media playback controls
-- System reset and bootloader access
-- Encoder: Brightness control
+### Layer 1 (Function/Sub)
+- F1-F12 function keys
+- System controls (bootloader, reset)
+- Media controls (volume, mute)
+- Encoder: Page up/down navigation
 
 ## License
 
