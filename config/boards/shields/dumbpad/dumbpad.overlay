@@ -31,20 +31,28 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4)
 
         diode-direction = "col2row";
         row-gpios
-            = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // F4
+            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // F5
+            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // F6
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // F7
+            ;
+        
+        col-gpios
+            = <&pro_micro 7 GPIO_ACTIVE_HIGH>   // C6
+            , <&pro_micro 8 GPIO_ACTIVE_HIGH>   // D7
+            , <&pro_micro 9 GPIO_ACTIVE_HIGH>   // E6
+            , <&pro_micro 10 GPIO_ACTIVE_HIGH>  // B4
+            , <&pro_micro 14 GPIO_ACTIVE_HIGH>  // B5
             ;
     };
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
         label = "LEFT_ENCODER";
-        a-gpios = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // B2
+        b-gpios = <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;   // D4
         resolution = <2>;
-        status = "disabled";
+        status = "okay";
     };
 
     sensors {
