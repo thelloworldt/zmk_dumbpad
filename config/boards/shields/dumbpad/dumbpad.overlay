@@ -45,11 +45,11 @@
             ;
         
         col-gpios
-            = <&pro_micro 7 GPIO_ACTIVE_HIGH>   // C6
-            , <&pro_micro 8 GPIO_ACTIVE_HIGH>   // D7
-            , <&pro_micro 9 GPIO_ACTIVE_HIGH>   // E6
+            = <&pro_micro 14 GPIO_ACTIVE_HIGH>  // B5
             , <&pro_micro 10 GPIO_ACTIVE_HIGH>  // B4
-            , <&pro_micro 14 GPIO_ACTIVE_HIGH>  // B5
+            , <&pro_micro 9 GPIO_ACTIVE_HIGH>   // E6
+            , <&pro_micro 8 GPIO_ACTIVE_HIGH>   // D7
+            , <&pro_micro 7 GPIO_ACTIVE_HIGH>   // C6
             ;
     };
 
